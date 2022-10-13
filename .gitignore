@@ -1,0 +1,5 @@
+/target
+/dumps
+config.json
+.env
+*.db*
