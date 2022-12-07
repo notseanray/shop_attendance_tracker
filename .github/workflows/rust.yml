@@ -18,13 +18,13 @@ jobs:
           override: true
 
       - name: Build
-        run: cargo build --all --release && strip target/release/npxl-viewer && mv target/release/npxl-viewer target/release/npxl-viewer_amd64
+        run: cargo build --all --release && strip target/release/shop_attendance_tracker && mv target/release/shop_attendance_tracker target/release/shop_attendance_tracker_amd64
 
       - name: Upload release
         uses: actions/upload-artifact@v3
         with:
-          name: npxl-viewer-darwin
-          path: target/release/npxl-viewer_amd64
+          name: shop_attendance_tracker-darwin
+          path: target/release/shop_attendance_tracker_amd64
 
   build-win:
     runs-on: windows-latest
@@ -46,8 +46,8 @@ jobs:
       - name: Upload release
         uses: actions/upload-artifact@v3
         with:
-          name: npxl-viewer-darwin
-          path: target/release/npxl-viewer.exe
+          name: shop_attendance_tracker-darwin
+          path: target/release/shop_attendance_tracaker.exe
 
   build-mac:
     runs-on: macos-latest
@@ -65,10 +65,10 @@ jobs:
           override: true
 
       - name: Build for mac
-        run: cargo build --all --release && strip target/release/npxl-viewer && mv target/release/npxl-viewer target/release/npxl-viewer_darwin
+        run: cargo build --all --release && strip target/release/shop_attendance_tracker && mv target/release/shop_attendance_tracker target/release/shop_attendance_tracker_darwin
 
       - name: Upload release
         uses: actions/upload-artifact@v3
         with:
-          name: npxl-viewer-darwin
-          path: target/release/npxl-viewer_darwin
+          name: shop_attendance_tracker-darwin
+          path: target/release/shop_attendance_tracker_darwin
